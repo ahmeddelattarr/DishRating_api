@@ -1,25 +1,19 @@
 from rest_framework import request, status, viewsets
-from rest_framework.status import HTTP_201_CREATED
+
 
 from .models import Meal, Rating
 from .serializers import MealSerializer, RatingSerializer
 
 from rest_framework.decorators import action
 from rest_framework.response import Response
-
 from django.contrib.auth.models import User
 
-from rest_framework.authentication import TokenAuthentication
 
-from rest_framework.permissions import AllowAny, IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
-
-from rest_framework.authtoken.models import Token
 
 
 class MealViewSet(viewsets.ModelViewSet):
     queryset = Meal.objects.all()
     serializer_class = MealSerializer
-    #permission_classes = [IsAuthenticatedOrReadOnly]  #
 
     @action(detail=True, methods=['post'])
     def rate_meal(self, request, pk=None):
@@ -29,11 +23,8 @@ class MealViewSet(viewsets.ModelViewSet):
             '''
             meal = Meal.objects.get(id=pk)
             stars = request.data['stars']
-            user = request.user
-
-            # print(user)
-            # username = request.data['username']
-            # user = User.objects.get(username=username)
+            username = request.data['username']
+            user = User.objects.get(username=username)
 
             try:
                 # update
