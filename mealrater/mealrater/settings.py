@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'rest_framework',
+    'rest_framework.authtoken',
 
 ]
 
@@ -83,7 +84,7 @@ DATABASES = {
     }
 }
 
-
+AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend']
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
 
