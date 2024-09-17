@@ -31,6 +31,23 @@ The base URL for all API endpoints is not specified in the provided configuratio
 - **Permissions**: AllowAny
 - **Description**: This endpoint is disabled and returns an error message
 
+#### 3. User Login
+- **Endpoint**: `/login/`
+- **Method**: POST
+- **Permissions**: AllowAny
+- **Description**: Authenticate a user and receive a token
+- **Request Body**:
+  ```json
+  {
+    "username": "string",
+    "password": "string"
+  }
+  ```
+- **Response**: Returns a token for the authenticated user
+- **Error Responses**:
+  - If username or password is missing: 400 Bad Request
+  - If credentials are invalid: 400 Bad Request
+
 ### Meal Management
 
 #### 1. List All Meals
@@ -79,6 +96,8 @@ This API uses token-based authentication. To authenticate, include the token in 
 ```
 Authorization: Token <your-token-here>
 ```
+
+To obtain a token, use the login endpoint described above.
 
 ## Permissions
 
