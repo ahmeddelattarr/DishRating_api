@@ -77,8 +77,10 @@ class RatingViewSet(viewsets.ModelViewSet):
 
 
 
+
 class LoginView(APIView):
     permission_classes = [AllowAny]
+
 
     def post(self, request, *args, **kwargs):
         username = request.data.get('username')
@@ -96,4 +98,3 @@ class LoginView(APIView):
         else:
             return Response({'error': 'Invalid credentials.'},
                             status=status.HTTP_400_BAD_REQUEST)
-
