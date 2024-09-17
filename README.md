@@ -20,7 +20,7 @@ The base URL for all API endpoints is not specified in the provided configuratio
   {
     "username": "string",
     "password": "string",
-    "email": "user@example.com"
+   
   }
   ```
 - **Response**: Returns a token for the newly created user
