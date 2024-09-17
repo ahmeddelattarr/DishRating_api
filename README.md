@@ -46,7 +46,7 @@ The base URL for all API endpoints is not specified in the provided configuratio
 - **Response**: Returns a token for the authenticated user
 - **Error Responses**:
   - If username or password is missing: 400 Bad Request
-  - If credentials are invalid: 400 Bad Request
+  - If credentials are invalid: 402 unauthorized
 
 ### Meal Management
 
