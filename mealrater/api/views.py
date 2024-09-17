@@ -76,9 +76,11 @@ class RatingViewSet(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
 
 
-# Login API view
+
+
 class LoginView(APIView):
     permission_classes = [AllowAny]
+
 
     def post(self, request, *args, **kwargs):
         username = request.data.get('username')
