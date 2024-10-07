@@ -111,4 +111,5 @@ To obtain a token, use the login endpoint described above.
 3. When rating a meal, ensure you're using the correct meal ID in the URL.
 4. The API uses Django Rest Framework's DefaultRouter, which provides additional endpoints for detail views, updates, and deletions that are not explicitly listed here.
 
+
 For any issues or further clarification, please contact the API administrator.
